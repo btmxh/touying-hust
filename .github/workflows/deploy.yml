@@ -24,12 +24,8 @@ jobs:
       - name: Clone fonts repository
         run: git clone https://github.com/touying-typ/fonts.git --depth=1
 
-      - name: Install Lato font
-        run: |
-          wget -O Lato.zip https://fonts.google.com/download?family=Lato
-          unzip -d lato Lato.zip
-          mv lato /usr/share/fonts/
-          fc-cache -fv
+      - uses: fontist/setup-fontist@v2
+      - run: fontist install "Lato"
 
       - name: Set up Python
         uses: actions/setup-python@v5
