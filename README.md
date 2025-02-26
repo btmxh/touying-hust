@@ -12,7 +12,7 @@ Since I don't have much experience with Typst scripting, this code _took quite a
 
 ## Example
 
-See the [example](https://github.com/btmxh/touying-hust/tree/master/examples) for a quick example I wrote in a night (along with the library code). Its content is based on my notes while reading [this](http://web.stanford.edu/~marykw/classes/CS250_W19/readings/Forney_Introduction_to_Finite_Fields.pdf).
+See the [examples](https://github.com/btmxh/touying-hust/tree/master/examples) for a quick example I wrote in a night (along with the library code). Its content is based on my notes while reading [this](http://web.stanford.edu/~marykw/classes/CS250_W19/readings/Forney_Introduction_to_Finite_Fields.pdf).
 
 ## License
 
