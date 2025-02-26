@@ -1,8 +1,8 @@
 # HUST touying template
 
-A conformist HUST template for [touying](https://github.com/touying-typ/touying).
+A conformist [HUST](https://en.wikipedia.org/wiki/Hanoi_University_of_Science_and_Technology) template for [touying](https://github.com/touying-typ/touying).
 
-This is heavily based on the official Microsoft PowerPoint template 2022.
+This is heavily based on the official Microsoft PowerPoint template 2022 edition.
 
 Currently supports two themes (`blue` and `red` (default)) at two aspect ratios (`4-3` and `16-9` (default)).
 
