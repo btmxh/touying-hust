@@ -8,6 +8,9 @@ authors = ["btmxh <@btmxh>"]
 license = "MIT-0"
 description = "Touying Slide Theme for HUST (Hanoi University of Science and Technology)"
 keywords = ["touying", "hust"]
+categories = ["presentation"]
+disciplines = ["computer-science", "mathematics"]
+exclude = ["examples/"]
 
 [template]
 path = "template"
