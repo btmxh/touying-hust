@@ -1,7 +1,7 @@
-// currently ctheorems is a little bit broken when used with touying
-// see: https://github.com/sahasatvik/typst-theorems/issues/49
-#import "@preview/ctheorems:1.1.3": *
-#show: thmrules
+#import "@preview/theorion:0.3.2": *
+#import cosmos.simple: *
+#show: show-theorion
+#set heading(numbering: "1.1")
 
 #import "@preview/touying:0.6.1": *
 #import "../lib.typ": *
@@ -9,6 +9,7 @@
 #show: hust-theme.with(
   theme: "red",
   aspect-ratio: "16-9",
+  config-common(frozen-counters: (theorem-counter,)), // freeze theorem counter for animation
   config-info(
     title: [An introduction to finite field theory],
     subtitle: [(IT4015 gatekept this absolute\ cinema of pure math from us sadge)],
@@ -17,9 +18,6 @@
     // date: datetime.today(),
   ),
 )
-
-#let theorem = thmbox("theorem", "Theorem", fill: rgb("#eeffee"), base: none, base_level: 1)
-#let proof = thmproof("proof", "Proof")
 
 #title-slide()
 
@@ -52,7 +50,7 @@ simplest example of a finite field.
 
 But why does this only works for prime numbers?
 
-== The integer modulo $p$
+#pagebreak()
 
 For every $n >= 1$, $ZZ_n$ behaves _almost_ like a field, except that inverses
 might not exist for every $m in ZZ_n$.
@@ -92,7 +90,7 @@ a finite field.
 
 Let's call this field $GL_p (g)$.
 
-== The polynomials modulo $g(x)$
+#pagebreak()
 
 *How many elements are there in this field?*
 
@@ -133,7 +131,7 @@ This is equivalent to $alpha$ having a (multiplicative) order of $|FF| - 1$.
 
 In a finite field $FF$, we can count the number of primitive elements.
 
-== Counting primitive elements
+#pagebreak()
 
 #theorem[
   If $FF$ is a finite field and $n$ is a factor of $|FF| - 1$, then the number
@@ -143,8 +141,10 @@ In a finite field $FF$, we can count the number of primitive elements.
 
 #pause
 
-_Proof._ By Lagrange's theorem, if some $beta in FF$ has order $n$, then $n
-  divides |FF| - 1$.
+// #proof[
+*Proof.*
+By Lagrange's theorem, if some $beta in FF$ has order $n$, then $n divides
+  |FF| - 1$.
 
 #pause
 
@@ -154,12 +154,10 @@ roots of the polynomial $x^n - 1$ in the field $FF$, i.e. elements with order
 at most $n$. So the number of elements with order $n$ in $FF$ is exactly
 $phi(n)$.
 
-== Counting primitive elements
-
 However, there is also the case where $n divides |FF| - 1$ but no such $beta$
 does not exist.
 
-#pause
+#pagebreak()
 
 But if we take the sum of all $phi(n)$, we have:
 
@@ -171,6 +169,7 @@ The left-hand side expression is an upper bound of the number of elements with
 some order $n$, while the right-hand side expression is the number of elements
 in $FF$ with order (excluding zero), so this equality means that
 all $n$ has some $beta$ with order $n$.
+#align(right, math.qed)
 
 #pause
 
@@ -278,7 +277,7 @@ injective as well, hence isomorphism!
 Now that we see our argument works with all polynomials that has at least one
 root, let's try to prove that all prime polynomials have this property.
 
-== Field homomorphism
+#pagebreak()
 
 #theorem[
   Prime polynomial $g$ with degree $m$ is a factor of $x^p^m - x$.
@@ -341,7 +340,7 @@ Hence, if $beta$ is a root of a prime polynomial $f$, then so does $beta^p$,
 $beta^p^2$, and so on. This sequence continues until there is a cycle at
 $beta^p^n = beta$.
 
-== Roots of prime polynomials
+#pagebreak()
 
 Now, consider the polynomial $g(x) = product_(k = 0)^(n - 1) (x - beta^p^k)$.
 
@@ -360,7 +359,7 @@ must be equal. Hence,
   for some $n divides m$.
 ]<thr-prime-factor>
 
-== Roots of prime polynomials
+#pagebreak()
 
 By evaluating the derivative of $x^p^m - x$, we know that this polynomial
 can not have a repeated root, and so do all of its prime factors. So if we
@@ -395,8 +394,10 @@ of the last $m$ outputs.
 It could be thought of as a sequence of bits (field elements of $ZZ_2$) $c_0,
 c_1, ...$ such that
 
-$ c_n = alpha_1 c_(n - 1) + alpha_2 c_(n - 2) + ... + alpha_m c_(n - m), forall
-n >= m, $
+$
+  c_n = alpha_1 c_(n - 1) + alpha_2 c_(n - 2) + ... + alpha_m c_(n - m), forall
+  n >= m,
+$
 
 where $alpha_1, alpha_2, ..., alpha_m in ZZ_2$ are the coefficients of the LFSR.
 
@@ -451,8 +452,10 @@ $ c_n = sum_(i = 0)^(m - 1) beta_i lambda^(n 2^i). $
 
 So if $N$ is the period of $c_n$, then,
 
-$ 0 = c_(n + N) - c_n = sum_(i = 0)^(m - 1) beta_i lambda^(n 2^i) (lambda^(N 2^i) -
-1). $
+$
+  0 = c_(n + N) - c_n = sum_(i = 0)^(m - 1) beta_i lambda^(n 2^i) (lambda^(N 2^i) -
+    1).
+$
 
 Consider the polynomial $P(x) = sum_(i = 0)^(m - 1) beta_i (lambda^(N 2^i) - 1)
 x^(2^i)$. Then, $P(lambda^j) = 0$ for all sufficiently large#footnote[Actually
@@ -464,7 +467,7 @@ But since $lambda$ is a primitive element, $P(t) = 0$ for all non-zero field
 element $t != 0$. There are $2^m - 1$ of such elements, but $P$ is only a
 polynomial of degree $2^(m - 1)$ at most, so $P = 0$.
 
-== Proving optimality of primitive polynomials
+#pagebreak()
 
 Hence, $lambda^(N 2^i) = 1$ for some $i$ such that $beta_i != 0$. Note that if
 $beta_i = 0$ for all $i$, then $c_n = 0$ for all $n$.
