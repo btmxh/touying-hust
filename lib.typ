@@ -245,7 +245,7 @@
   lang: "en",
   font: ("Lato",),
   title: self => utils.display-current-heading(depth: self.slide-level),
-  footer-pagenum: context utils.slide-counter.display() + " / " + utils.last-slide-number,
+  footer-pagenum: text(context utils.slide-counter.display() + " / " + utils.last-slide-number, fill: hustred),
   progress-bar: true,
   ..args,
   body,
