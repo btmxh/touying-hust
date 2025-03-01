@@ -10,9 +10,19 @@ Since I don't have much experience with Typst scripting, this code _took quite a
 
 *NOTE*: You need the [Lato](https://fonts.google.com/specimen/Lato) font for the best experience. It is an open font so that's as easy as typing `yay -S ttf-lato` into the terminal.
 
+## Assets attribution
+
+Assets are extracted from the official Microsoft PowerPoint templates
+[here](https://hust.edu.vn/vi/he-thong-nhan-dien-thuong-hieu/).
+The file `assets/title-bg-blue-4-3.png` is a color exchanged version of
+`assets/title-bg-red-4-3.png` since the official title background
+of the 4-3 aspect ratio is red for some reason.
+
 ## Example
 
 See the [examples](https://github.com/btmxh/touying-hust/tree/master/examples) for a quick example I wrote in a night (along with the library code). Its content is based on my notes while reading [this](http://web.stanford.edu/~marykw/classes/CS250_W19/readings/Forney_Introduction_to_Finite_Fields.pdf).
+
+More examples can be found on the [examples](https://github.com/btmxh/touying-hust/tree/examples/examples) branch.
 
 ## License
 
