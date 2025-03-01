@@ -9,13 +9,15 @@
 #show: hust-theme.with(
   theme: "red",
   aspect-ratio: "16-9",
-  config-common(frozen-counters: (theorem-counter,)), // freeze theorem counter for animation
+  config-common(
+    frozen-counters: (theorem-counter,), // freeze theorem counter for animation
+    datetime-format: "[day padding:none] [month repr:long] [year]",
+  ),
   config-info(
     title: [An introduction to finite field theory],
     subtitle: [(IT4015 gatekept this absolute\ cinema of pure math from us sadge)],
-    // author: [Anonymous],
-    // institution: [Hanoi University of Science and Technology],
-    // date: datetime.today(),
+    author: [Anonymous],
+    date: datetime.today(),
   ),
 )
 

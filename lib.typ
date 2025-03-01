@@ -126,18 +126,25 @@
             info.subtitle,
           )
         }
+
+        v(0.5em)
+
+        if info.author != none {
+          parbreak()
+          text(size: 1em, info.author, fill: hustred)
+        }
+
+        if info.institution != none {
+          parbreak()
+          text(size: 0.7em, info.institution, fill: hustred)
+        }
+
+        if info.date != none {
+          parbreak()
+          text(size: 0.7em, utils.display-info-date(self), fill: black)
+        }
       },
     )
-    v(0.5em)
-    if info.institution != none {
-      parbreak()
-      text(size: 0.7em, info.institution)
-    }
-
-    if info.date != none {
-      parbreak()
-      text(size: 0.7em, utils.display-info-date(self))
-    }
 
     v(1.0fr)
   }
