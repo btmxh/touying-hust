@@ -6,7 +6,7 @@ entrypoint = "lib.typ"
 repository = "https://github.com/btmxh/touying-hust"
 authors = ["btmxh"]
 license = "MIT-0"
-description = "touying template for HUST slides (i will NOT use powerpoint)"
+description = "Touying Slide Theme for HUST (Hanoi University of Science and Technology)"
 keywords = ["touying", "hust"]
 
 [template]
