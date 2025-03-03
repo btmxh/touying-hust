@@ -20,10 +20,10 @@ of the 4-3 aspect ratio is red for some reason.
 
 ## Example
 
-See the [examples](https://github.com/btmxh/touying-hust/tree/master/examples) for a quick example I wrote in a night (along with the library code). Its content is based on my notes while reading [this](http://web.stanford.edu/~marykw/classes/CS250_W19/readings/Forney_Introduction_to_Finite_Fields.pdf).
+See the [examples](https://github.com/btmxh/touying-ppt-hustvn/tree/master/examples) for a quick example I wrote in a night (along with the library code). Its content is based on my notes while reading [this](http://web.stanford.edu/~marykw/classes/CS250_W19/readings/Forney_Introduction_to_Finite_Fields.pdf).
 
-More examples can be found on the [examples](https://github.com/btmxh/touying-hust/tree/examples/examples) branch.
+More examples can be found on the [examples](https://github.com/btmxh/touying-ppt-hustvn/tree/examples/examples) branch.
 
 ## License
 
-Licensed under the [MIT-0](https://github.com/btmxh/touying-hust/blob/master/LICENSE) license (for usage convenience, you're welcome).
+Licensed under the [MIT-0](https://github.com/btmxh/touying-ppt-hustvn/blob/master/LICENSE) license (for usage convenience, you're welcome).
