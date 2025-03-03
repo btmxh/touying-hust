@@ -1,5 +1,5 @@
 #import "@preview/touying:0.6.1": *
-#import "@preview/touying-hust:0.1.0": *
+#import "@preview/touying-ppt-hustvn:0.1.0": *
 
 #show: hust-theme.with(
   theme: "red",
